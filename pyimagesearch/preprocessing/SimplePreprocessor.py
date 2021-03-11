@@ -13,3 +13,4 @@ class simplepreprocessor:
     def fit_transform(self, image):
         return cv2.resize(image, (self.width, self.height), interpolation=self.inter)
 
+    
