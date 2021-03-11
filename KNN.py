@@ -26,12 +26,12 @@ le=LabelEncoder()
 
 data, labels = sdl.load(imagepaths, 5)
 
-data.reshape((data.shape[0], 3072))
+data=data.reshape((data.shape[0], 3072))
 labels = le.fit_transform(labels)
 
-trainX, trainY, testX, testY = train_test_split(data, train_size=0.25, random_state=42)
+trainX, testX, trainY, testY = train_test_split(data, labels, train_size=0.25, random_state=42)
 
 knn=KNeighborsClassifier(n_neighbors=args['neighbors'], n_jobs=args['jobs'])
 knn.fit(trainX, trainY)
-classification_report(testY, knn.predict(testX), target_names=le.classes_)
+print(classification_report(testY, knn.predict(testX), target_names=le.classes_))
 

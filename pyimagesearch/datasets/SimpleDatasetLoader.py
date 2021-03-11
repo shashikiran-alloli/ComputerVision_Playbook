@@ -21,7 +21,7 @@ class simpledatasetloader:
             label=imagepath.split(os.path.sep)[-2]
             image=cv2.imread(imagepath)
 
-            for preprocessor in preprocessors:
+            for preprocessor in self.preprocessors:
                 image=preprocessor.fit_transform(image)
 
             data.append(image)
@@ -30,5 +30,5 @@ class simpledatasetloader:
             if(verbose>0 and (i+1)%verbose==0):
                 print("Processing {} file...".format(i+1))
         
-        return data, labels
+        return np.array(data), np.array(labels)
         
