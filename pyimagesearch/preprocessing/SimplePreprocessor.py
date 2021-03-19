@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 __author__="Shashikiran Alloli"
 __version__="0.1"
+__all__=['simplepreprocessor']
 
 import cv2
 
