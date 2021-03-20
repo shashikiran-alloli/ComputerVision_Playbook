@@ -41,7 +41,7 @@ test_sub = test_sub/255.0
 #Configuring layers of neural network
 model = Sequential()
 model.add(Dense(256, input_shape=(784,), activation="sigmoid"))
-model.add(Dense(128, activation="sigmoid"))
+model.add(Dense(128, activation="relu"))
 model.add(Dense(10, activation="softmax"))
 
 #Configuring optimizer
